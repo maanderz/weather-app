@@ -83,7 +83,7 @@ input:focus {
 .row-1 {
 	font-size: 30px;
 	position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
