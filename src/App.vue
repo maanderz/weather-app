@@ -27,7 +27,6 @@ export default {
 	},
 	methods: {
 		submit(){
-			console.log('clicked', this.city)
 			axios.get(`http://localhost:3001/`, {
 				params: {
 					city: this.city
