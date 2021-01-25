@@ -3,7 +3,7 @@
 		<h1>Weather App</h1>
 		<div class="container">
 			<div class="row">
-				<input v-model="city" placeholder="Enter a city">
+				<input v-model="city" placeholder="Enter a city (no abbreviations please!)">
 				<button class="search-btn" @click="submit"> 
 					<img class="button-size" src="./assets/search.png" />
 				</button>
