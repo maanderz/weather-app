@@ -8,23 +8,34 @@
 					<img class="button-size" src="./assets/search.png" />
 				</button>
 			</div> 
+		</div>
+		<div class="row-1">
+			{{ response }}
 		</div> 
 	</div>
 </template>
 
 <script>
-
-
+import axios from 'axios';
 export default {
 	name: 'App',
 	data(){
 		return {
-			city: ''
+			city: '',
+			response: ''
 		}
 	},
 	methods: {
 		submit(){
 			console.log('clicked', this.city)
+			axios.get(`http://localhost:3001/`, {
+				params: {
+					city: this.city
+				}
+			})
+			.then((response) => {
+				this.response = response;
+			})
 		}
 	}
 }
@@ -40,6 +51,7 @@ export default {
 	@media (min-width: 900px) {
 		width: 65%;
 	}
+	position: relative;
 }
 h1 {
 	font-size: 75px;
@@ -54,7 +66,7 @@ input {
 	background: transparent;
 	border: none;
 	border-bottom: 1px solid white;
-	font-size: 24px;
+	font-size: 30px;
 	height: 50px;
 	padding-bottom: 15px;
 	text-align: center;
@@ -67,6 +79,14 @@ input:focus {
 .row {
 	display: flex; 
 	justify-content: center;
+    align-items: center;
+}
+.row-1 {
+	font-size: 30px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .search-btn {
 	background: #455a65;
